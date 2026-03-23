@@ -17,47 +17,30 @@
   --green:#3ecf8e;--green-bg:rgba(62,207,142,0.12);--green-bd:rgba(62,207,142,0.28);
   --red:#f55b5b;--red-bg:rgba(245,91,91,0.12);--red-bd:rgba(245,91,91,0.28);
   --amber:#f5a623;--amber-bg:rgba(245,166,35,0.12);--amber-bd:rgba(245,166,35,0.28);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:var(--bg)}
-body{
-  color:var(--text);font-family:'Noto Sans TC',sans-serif;
-  font-size:15px;overflow-x:hidden;
-  padding-bottom:calc(80px + var(--safe-bottom));
-}
+body{color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:15px;overflow-x:hidden;padding-bottom:calc(80px + var(--safe-bottom));}
 .app{max-width:480px;margin:0 auto;padding:12px 14px}
 
-/* ── Top bar ── */
-.topbar{
-  position:sticky;top:0;z-index:100;
-  background:rgba(15,17,23,0.92);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  padding:10px 14px 8px;
-  margin:0 -14px 14px;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:10px;
-}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(15,17,23,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:10px 14px 8px;margin:0 -14px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
 .topbar-icon{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .topbar-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;flex:1}
 .topbar-sub{font-size:11px;color:var(--text2)}
 .topbar-actions{display:flex;gap:6px}
-.icon-btn{width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--text2);font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
+.icon-btn{width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--text2);font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
 .icon-btn:active{background:var(--bg3)}
 
-/* ── Card ── */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
 .card-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:12px}
 
-/* ── Setup ── */
 .team-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:12px}
 .team-tab{padding:10px;text-align:center;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;background:var(--bg2);transition:all .15s}
 .team-tab.active-a{background:var(--blue-bg);color:var(--blue)}
 .team-tab.active-b{background:var(--amber-bg);color:var(--amber)}
 .ti{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:15px;font-family:inherit;margin-bottom:8px}
 .ti:focus{outline:none;border-color:var(--blue)}
-
 .player-row{display:grid;grid-template-columns:28px 1fr 70px;gap:6px;align-items:center;margin-bottom:6px}
 .pos-badge{width:28px;height:28px;border-radius:7px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--text3);flex-shrink:0}
 .pi{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 10px;color:var(--text);font-size:14px;font-family:inherit;width:100%}
@@ -69,7 +52,16 @@ body{
 .str-btn.s3.active{background:var(--blue-bg);border-color:var(--blue-bd);color:var(--blue)}
 .str-btn.s4.active{background:var(--bg3);border-color:var(--border2);color:var(--text2)}
 
-/* ── Coin ── */
+/* 勝率輸入 */
+.wr-grid{display:flex;flex-direction:column;gap:5px}
+.wr-row{display:grid;grid-template-columns:44px 1fr 64px;gap:8px;align-items:center;padding:8px 10px;background:var(--bg3);border-radius:8px}
+.wr-pos{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text)}
+.wr-names{font-size:11px;color:var(--text2);line-height:1.4}
+.wr-input-wrap{display:flex;align-items:center;gap:3px}
+.wr-input{width:44px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:5px 6px;color:var(--text);font-size:14px;font-weight:700;font-family:'Space Grotesk',sans-serif;text-align:center}
+.wr-input:focus{outline:none;border-color:var(--blue)}
+.wr-pct{font-size:12px;color:var(--text2)}
+
 .coin-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .coin-btn{padding:16px 8px;border:1px solid var(--border);border-radius:12px;cursor:pointer;background:var(--bg3);color:var(--text2);font-size:14px;font-family:inherit;transition:all .15s;text-align:center;line-height:1.5}
 .coin-btn:active{opacity:.8}
@@ -78,16 +70,6 @@ body{
 .coin-emoji{font-size:28px;display:block;margin-bottom:4px}
 .coin-hint{font-size:11px;opacity:.7;display:block;margin-top:3px}
 
-/* ── Phase strip ── */
-.phase-strip{display:flex;align-items:center;gap:6px;margin-bottom:12px;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:10px}
-.phase-dot{width:8px;height:8px;border-radius:50%;background:var(--bg3);border:1px solid var(--border2);flex-shrink:0}
-.phase-dot.done{background:var(--green)}.phase-dot.active{background:var(--blue)}
-.phase-label{font-size:12px;color:var(--text2);flex:1}
-.phase-label.active{color:var(--text);font-weight:500}
-.phase-label.done{color:var(--green)}
-.phase-sep{color:var(--text3);font-size:11px}
-
-/* ── Arrange flow ── */
 .flow-strip{display:flex;gap:5px;margin-bottom:12px}
 .fc{flex:1;padding:8px 2px;border:1px solid var(--border);border-radius:9px;text-align:center;background:var(--bg2)}
 .fc.cur{background:var(--blue-bg);border-color:var(--blue-bd)}
@@ -100,7 +82,6 @@ body{
 .fc-combo{font-size:10px;font-weight:700;font-family:'Space Grotesk',sans-serif;display:block;margin-top:2px}
 .fc.dm .fc-combo{color:var(--green)}.fc.dt .fc-combo{color:var(--amber)}
 
-/* ── Pos tracker ── */
 .pos-track{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px}
 .pt-cell{border:1px solid var(--border);border-radius:8px;padding:6px 2px;text-align:center;background:var(--bg2)}
 .pt-cell.used{border-color:var(--amber-bd);background:var(--amber-bg)}
@@ -110,7 +91,6 @@ body{
 .pt-b{font-size:8px;color:var(--amber);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pt-st{font-size:8px;color:var(--text3);display:block;margin-top:1px}
 
-/* ── Alert ── */
 .alert{padding:10px 13px;border-radius:9px;font-size:13px;line-height:1.6;margin-bottom:10px}
 .alert strong{font-weight:600}
 .ai{background:var(--blue-bg);border:1px solid var(--blue-bd);color:#8aabf5}.ai strong{color:var(--blue)}
@@ -118,9 +98,8 @@ body{
 .ar{background:var(--red-bg);border:1px solid var(--red-bd);color:#d94f4f}.ar strong{color:var(--red)}
 .aw{background:var(--amber-bg);border:1px solid var(--amber-bd);color:#c4862d}.aw strong{color:var(--amber)}
 
-/* ── Combo list ── */
 .combo-list{display:flex;flex-direction:column;gap:6px}
-.ci{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--border);border-radius:11px;cursor:pointer;background:var(--bg2);transition:all .12s;active-scale:.98}
+.ci{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--border);border-radius:11px;cursor:pointer;background:var(--bg2);transition:all .12s}
 .ci:active{opacity:.85;transform:scale(.98)}
 .ci.best{border-color:var(--green-bd);background:var(--green-bg)}
 .ci.picked{border-color:var(--blue-bd);background:var(--blue-bg)}
@@ -128,12 +107,15 @@ body{
 .ci-info{flex:1;min-width:0}
 .ci-names{font-size:13px;font-weight:600;color:var(--text)}
 .ci-vs{font-size:11px;color:var(--text2);margin-top:3px}
-.ci-adv{text-align:right;flex-shrink:0}
-.av{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700}
-.al{font-size:10px;margin-top:1px}
-.pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--text2)}
+.ci-wr{text-align:right;flex-shrink:0}
+.wr-val{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700}
+.wr-lbl{font-size:10px;margin-top:1px;color:var(--text2)}
+.wr-high{color:var(--green)}.wr-mid{color:var(--amber)}.wr-low{color:var(--red)}
 
-/* ── Position buttons (large, touch-friendly) ── */
+/* wr bar */
+.wr-bar-wrap{height:4px;border-radius:2px;background:var(--bg3);margin-top:4px;overflow:hidden}
+.wr-bar{height:100%;border-radius:2px;transition:width .3s}
+
 .pos-btns{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:10px}
 .pb{height:50px;border:1px solid var(--border);border-radius:10px;cursor:pointer;background:var(--bg3);color:var(--text2);font-size:16px;font-weight:700;font-family:'Space Grotesk',sans-serif;transition:all .12s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
 .pb:active:not(:disabled){transform:scale(.93)}
@@ -142,7 +124,6 @@ body{
 .pb:disabled{opacity:.2;cursor:not-allowed}
 .pb-name{font-size:7px;font-weight:400;font-family:'Noto Sans TC',sans-serif;color:inherit;opacity:.7;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-/* ── Matchup ── */
 .matchup{display:grid;grid-template-columns:1fr 30px 1fr;gap:8px;align-items:center;margin-bottom:10px}
 .ms{padding:12px 8px;border-radius:10px;text-align:center}
 .ms-a{background:var(--green-bg);border:1px solid var(--green-bd)}
@@ -151,7 +132,6 @@ body{
 .ms-str{font-size:11px;color:var(--text2);margin-top:4px}
 .vs-mid{font-size:13px;font-weight:700;color:var(--text3);text-align:center}
 
-/* ── Score bar ── */
 .score-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;margin-bottom:10px}
 .sc-team{text-align:center}
 .sc-name{font-size:12px;color:var(--text2);margin-bottom:3px}
@@ -165,7 +145,6 @@ body{
 .dot.l{background:var(--red);border-color:var(--red)}
 .dot.cur{background:var(--blue);border-color:var(--blue)}
 
-/* ── Play point cards ── */
 .point-cards{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
 .pc2{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg2)}
 .pc2.cur-pt{border-color:var(--blue-bd);background:var(--blue-bg)}
@@ -181,42 +160,23 @@ body{
 .pc2-tag.theirs-tag{background:var(--amber-bg);color:var(--amber)}
 .pc2-res{font-size:13px;font-weight:700;flex-shrink:0;width:28px;text-align:right}
 
-/* ── Result buttons ── */
 .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 .res-btn{padding:16px 8px;border-radius:11px;cursor:pointer;font-size:14px;font-weight:700;font-family:inherit;border:1px solid;transition:all .12s;line-height:1.3;text-align:center}
 .res-btn:active{transform:scale(.97)}
 .res-a{background:var(--green-bg);border-color:var(--green-bd);color:var(--green)}
 .res-b{background:var(--red-bg);border-color:var(--red-bd);color:var(--red)}
 
-/* ── Bottom action bar ── */
-.bottom-bar{
-  position:fixed;bottom:0;left:0;right:0;
-  background:rgba(15,17,23,0.94);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-top:1px solid var(--border);
-  padding:10px 14px calc(10px + var(--safe-bottom));
-  display:flex;gap:8px;
-  z-index:100;
-}
+.bottom-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(15,17,23,0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 14px calc(10px + var(--safe-bottom));display:flex;gap:8px;z-index:100;}
 .btn-main{flex:1;padding:14px;background:var(--blue);border:none;border-radius:11px;color:#fff;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .12s}
 .btn-main:active{opacity:.85;transform:scale(.98)}
+.btn-main:disabled{opacity:.35;transform:none}
 .btn-sec{padding:14px 16px;border:1px solid var(--border);border-radius:11px;cursor:pointer;background:var(--bg2);color:var(--text2);font-size:13px;font-family:inherit;transition:all .12s;white-space:nowrap}
 .btn-sec:active{background:var(--bg3)}
-.btn-danger{padding:14px 16px;border:1px solid var(--red-bd);border-radius:11px;cursor:pointer;background:var(--red-bg);color:var(--red);font-size:13px;font-family:inherit;transition:all .12s;white-space:nowrap}
 
-/* ── Done ── */
 .done-hero{text-align:center;padding:32px 20px 24px}
 .done-emoji{font-size:52px;margin-bottom:10px}
 .done-title{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;margin-bottom:4px}
 .done-sub{font-size:16px;color:var(--text2)}
-
-/* ── Tag helpers ── */
-.tag{font-size:10px;padding:2px 6px;border-radius:5px;display:inline-block}
-.tag-mine{background:var(--blue-bg);color:var(--blue)}
-.tag-theirs{background:var(--amber-bg);color:var(--amber)}
-.tag-win{background:var(--green-bg);color:var(--green)}
-.tag-lose{background:var(--red-bg);color:var(--red)}
 </style>
 </head>
 <body>
@@ -225,8 +185,18 @@ body{
   <div id="root"></div>
 </div>
 <div class="bottom-bar" id="bottombar"></div>
-
 <script>
+// ── Default win rates (21 combos in order) ──────────────
+// Key: "min+max" e.g. "1+2"
+const DEFAULT_WR = {
+  '1+2':60,'1+3':55,'1+4':70,'1+5':75,'1+6':85,'1+7':85,
+  '2+3':40,'2+4':50,'2+5':50,'2+6':55,'2+7':50,
+  '3+4':65,'3+5':80,'3+6':75,'3+7':80,
+  '4+5':80,'4+6':65,'4+7':70,
+  '5+6':75,'5+7':80,
+  '6+7':50
+};
+
 const DEF_A=[
   {name:'peter',s:1},{name:'joe哥',s:4},{name:'樹哥',s:2},
   {name:'梓峰',s:1},{name:'Aj',s:1},{name:'Joyce',s:3},{name:'師妹',s:3}
@@ -241,6 +211,7 @@ let G={
   teamA:{name:'A隊（藍）',players:DEF_A.map(p=>({...p}))},
   teamB:{name:'B隊（黃）',players:DEF_B.map(p=>({...p}))},
   coinWin:true,
+  wr:{...DEFAULT_WR},
   arrangements:[],
   arrangePt:1,
   aPicked:null,
@@ -249,81 +220,74 @@ let G={
   setupTab:'A',
 };
 
-// ── Logic ──────────────────────────────────────────
-function picker(pt){return (G.coinWin?[1,3,5]:[2,4]).includes(pt)?'mine':'theirs';}
+// ── Helpers ──────────────────────────────────────────────
+function wrKey(p1,p2){const a=Math.min(p1,p2),b=Math.max(p1,p2);return `${a}+${b}`;}
+function getWR(p1,p2){return G.wr[wrKey(p1,p2)]??50;}
+function wrColor(v){return v>=70?'wr-high':v>=50?'wr-mid':'wr-low';}
+function wrBarColor(v){return v>=70?'var(--green)':v>=50?'var(--amber)':'var(--red)';}
+function wrLabel(v){return v>=70?'推薦':v>=60?'可考慮':v>=50?'五五波':'風險高';}
+
+function picker(pt){return(G.coinWin?[1,3,5]:[2,4]).includes(pt)?'mine':'theirs';}
 function arrangedCC(){const c=new Array(8).fill(0);G.arrangements.forEach(a=>{c[a.pos[0]]++;c[a.pos[1]]++;});return c;}
-function mustPos(pt,cc){
-  if(pt!==4)return null;
-  // Both teams share the same position numbers, so one unplayed pos = unplayed for both sides
-  for(let i=1;i<=7;i++)if(cc[i]===0)return i;
-  return null;
-}
+function mustPos(pt,cc){if(pt!==4)return null;for(let i=1;i<=7;i++)if(cc[i]===0)return i;return null;}
 function validCombo(p1,p2,pt,cc){
-  if(p1===p2) return false;
-  // Max 2 appearances — applies to ALL points
-  if(cc[p1]>=2||cc[p2]>=2) return false;
-  // Points 1-3: each position can only appear once (first time)
-  if(pt<=3&&(cc[p1]>=1||cc[p2]>=1)) return false;
-  // Point 4: must include the one unplayed position
+  if(p1===p2)return false;
+  if(cc[p1]>=2||cc[p2]>=2)return false;
+  if(pt<=3&&(cc[p1]>=1||cc[p2]>=1))return false;
   if(pt===4){const u=mustPos(pt,cc);if(u&&u!==p1&&u!==p2)return false;}
-  // Point 5: free to pick any two with cc<2 (already handled above)
   return true;
 }
-function adv(p1,p2){return(G.teamB.players[p1-1].s+G.teamB.players[p2-1].s)-(G.teamA.players[p1-1].s+G.teamA.players[p2-1].s);}
 function ranked(pt){
   const cc=arrangedCC(),res=[];
   for(let i=1;i<=7;i++)for(let j=i+1;j<=7;j++){
-    if(validCombo(i,j,pt,cc)){const a=adv(i,j);res.push({pos:[i,j],adv:a,aS:G.teamA.players[i-1].s+G.teamA.players[j-1].s,bS:G.teamB.players[i-1].s+G.teamB.players[j-1].s});}
+    if(validCombo(i,j,pt,cc)){
+      res.push({pos:[i,j],wr:getWR(i,j)});
+    }
   }
-  return res.sort((a,b)=>b.adv-a.adv);
+  return res.sort((a,b)=>b.wr-a.wr);
 }
-function advLabel(v){if(v>2)return'A大優';if(v>0)return'A略優';if(v===0)return'平手';if(v>=-2)return'B略優';return'B大優';}
-function advCls(v){return v>0?'pos':v<0?'neg':'neu';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function score(){let a=0,b=0;G.results.forEach(r=>{if(r.winner==='A')a++;else b++;});return{a,b};}
 
-// ── Render ──────────────────────────────────────────
+// ── Render ───────────────────────────────────────────────
 function render(){
   const root=document.getElementById('root');
-  const topbar=document.getElementById('topbar');
   const bot=document.getElementById('bottombar');
+  const topbar=document.getElementById('topbar');
   if(G.phase==='setup'){
-    topbar.innerHTML=renderTopbar('設定隊伍','',false,false);
+    topbar.innerHTML=mkTopbar('羽球排點顧問','',false,false);
     root.innerHTML=renderSetup();
     bot.innerHTML=`<button class="btn-main" onclick="startArrange()">▶ 開始排點</button>`;
   } else if(G.phase==='arrange'){
     const pt=G.arrangePt;const ctrl=picker(pt);
-    const title=ctrl==='mine'?`第${pt}點 — 你來排`:`第${pt}點 — 對方排點`;
-    topbar.innerHTML=renderTopbar(title,`排點 ${G.arrangements.length}/5`,true,G.arrangements.length>0);
+    topbar.innerHTML=mkTopbar(ctrl==='mine'?`第${pt}點 — 你來排`:`第${pt}點 — 對方排點`,`排點 ${G.arrangements.length}/5`,true,G.arrangements.length>0);
     root.innerHTML=renderArrange();
     if(ctrl==='mine'){
       bot.innerHTML=G.aPicked
-        ?`<button class="btn-main" onclick="confirmA()">確認排 順位 ${G.aPicked[0]}+${G.aPicked[1]}</button>`
-        :`<button class="btn-main" style="opacity:.4" disabled>點選上方組合</button>`;
+        ?`<button class="btn-main" onclick="confirmA()">確認排 順位 ${G.aPicked[0]}+${G.aPicked[1]}（${getWR(...G.aPicked)}%）</button>`
+        :`<button class="btn-main" disabled>點選上方組合</button>`;
     } else {
+      const selWr=G.bSel.length===2?`（${getWR(...[...G.bSel].sort((a,b)=>a-b))}%）`:'';
       bot.innerHTML=G.bSel.length===2
-        ?`<button class="btn-main" onclick="confirmB()">確認對方排點 →</button>`
-        :`<button class="btn-main" style="opacity:.4" disabled>選擇兩個順位</button>`;
+        ?`<button class="btn-main" onclick="confirmB()">確認對方排點${selWr} →</button>`
+        :`<button class="btn-main" disabled>選擇兩個順位</button>`;
     }
   } else if(G.phase==='play'){
     const idx=G.results.length;
-    topbar.innerHTML=renderTopbar(`第${idx+1}點 比賽中`,'',false,false);
+    topbar.innerHTML=mkTopbar(`第${idx+1}點 比賽中`,'',false,false);
     root.innerHTML=renderPlay();
     bot.innerHTML=`<button class="btn-sec" onclick="startArrange()">↺ 重排</button><button class="btn-sec" onclick="G.phase='setup';render()">⚙ 設定</button>`;
   } else {
-    topbar.innerHTML=renderTopbar('比賽結束','',false,false);
+    topbar.innerHTML=mkTopbar('比賽結束','',false,false);
     root.innerHTML=renderDone();
     bot.innerHTML=`<button class="btn-main" onclick="startArrange()">↺ 再打一場</button><button class="btn-sec" onclick="G.phase='setup';render()">⚙ 設定</button>`;
   }
 }
 
-function renderTopbar(title,sub,showUndo,canUndo){
+function mkTopbar(title,sub,showUndo,canUndo){
   return `<div class="topbar">
     <div class="topbar-icon">🏸</div>
-    <div style="flex:1">
-      <div class="topbar-title">${esc(title)}</div>
-      ${sub?`<div class="topbar-sub">${esc(sub)}</div>`:''}
-    </div>
+    <div style="flex:1"><div class="topbar-title">${esc(title)}</div>${sub?`<div class="topbar-sub">${esc(sub)}</div>`:''}</div>
     <div class="topbar-actions">
       ${showUndo?`<button class="icon-btn" ${canUndo?'onclick="undoArrange()"':'style="opacity:.3"'} ${canUndo?'':'disabled'}>↩</button>`:''}
       ${G.phase!=='setup'?`<button class="icon-btn" onclick="G.phase='setup';render()">⚙</button>`:''}
@@ -331,73 +295,85 @@ function renderTopbar(title,sub,showUndo,canUndo){
   </div>`;
 }
 
-// ── Setup ──────────────────────────────────────────
+// ── Setup ────────────────────────────────────────────────
 function renderSetup(){
   const t=G.setupTab==='A'?G.teamA:G.teamB;
   const col=G.setupTab==='A'?'var(--blue)':'var(--amber)';
   const rows=t.players.map((p,i)=>{
-    const strBtns=[1,2,3,4].map(v=>`<button class="str-btn s${v}${p.s===v?' active':''}" onclick="setStr('${G.setupTab}',${i},${v})">${v}</button>`).join('');
+    const sb=[1,2,3,4].map(v=>`<button class="str-btn s${v}${p.s===v?' active':''}" onclick="setStr('${G.setupTab}',${i},${v})">${v}</button>`).join('');
     return `<div class="player-row">
       <div class="pos-badge">${i+1}</div>
       <input class="pi" value="${esc(p.name)}" oninput="G.team${G.setupTab}.players[${i}].name=this.value;renderSetupOnly()">
-      <div class="str-group">${strBtns}</div>
+      <div class="str-group">${sb}</div>
     </div>`;
   }).join('');
 
-  const coinWin=G.coinWin;
+  // Win rate editor: all 21 combos
+  const wrRows=Object.keys(DEFAULT_WR).map(key=>{
+    const[p1,p2]=key.split('+').map(Number);
+    const v=G.wr[key]??50;
+    const an=G.teamA.players[p1-1].name,bn=G.teamB.players[p1-1].name;
+    const an2=G.teamA.players[p2-1].name,bn2=G.teamB.players[p2-1].name;
+    return `<div class="wr-row">
+      <div class="wr-pos">${key}</div>
+      <div class="wr-names">
+        <span style="color:var(--blue)">${esc(an)}+${esc(an2)}</span><br>
+        <span style="color:var(--amber)">${esc(bn)}+${esc(bn2)}</span>
+        <div class="wr-bar-wrap"><div class="wr-bar" style="width:${v}%;background:${wrBarColor(v)}"></div></div>
+      </div>
+      <div class="wr-input-wrap">
+        <input class="wr-input" type="number" min="0" max="100" value="${v}"
+          oninput="G.wr['${key}']=+this.value;renderSetupOnly()">
+        <span class="wr-pct">%</span>
+      </div>
+    </div>`;
+  }).join('');
+
   return `<div class="card">
     <div class="card-title">猜拳結果</div>
     <div class="coin-row">
-      <button class="coin-btn${coinWin?' cg':''}" onclick="G.coinWin=true;render()">
-        <span class="coin-emoji">✊</span>我猜贏了
-        <span class="coin-hint">我排 1、3、5 點</span>
+      <button class="coin-btn${G.coinWin?' cg':''}" onclick="G.coinWin=true;render()">
+        <span class="coin-emoji">✊</span>我猜贏了<span class="coin-hint">我排 1、3、5 點</span>
       </button>
-      <button class="coin-btn${!coinWin?' cr':''}" onclick="G.coinWin=false;render()">
-        <span class="coin-emoji">✋</span>我猜輸了
-        <span class="coin-hint">我排 2、4 點</span>
+      <button class="coin-btn${!G.coinWin?' cr':''}" onclick="G.coinWin=false;render()">
+        <span class="coin-emoji">✋</span>我猜輸了<span class="coin-hint">我排 2、4 點</span>
       </button>
     </div>
   </div>
   <div class="card">
-    <div class="card-title">選手設定（強弱：1最強 4最弱）</div>
+    <div class="card-title">選手設定</div>
     <div class="team-tabs">
       <div class="team-tab${G.setupTab==='A'?' active-a':''}" onclick="G.setupTab='A';render()">${esc(G.teamA.name)}</div>
       <div class="team-tab${G.setupTab==='B'?' active-b':''}" onclick="G.setupTab='B';render()">${esc(G.teamB.name)}</div>
     </div>
     <input class="ti" value="${esc(t.name)}" style="font-weight:600;color:${col}" placeholder="隊名" oninput="G.team${G.setupTab}.name=this.value;renderSetupOnly()">
     ${rows}
+  </div>
+  <div class="card">
+    <div class="card-title">各配對勝率（可修改）</div>
+    <div class="wr-grid">${wrRows}</div>
   </div>`;
 }
 
-function renderSetupOnly(){
-  document.getElementById('root').innerHTML=renderSetup();
-}
+function renderSetupOnly(){document.getElementById('root').innerHTML=renderSetup();}
+function setStr(tid,idx,val){if(tid==='A')G.teamA.players[idx].s=val;else G.teamB.players[idx].s=val;render();}
 
-function setStr(tid,idx,val){
-  if(tid==='A') G.teamA.players[idx].s=val;
-  else G.teamB.players[idx].s=val;
-  render();
-}
-
-// ── Arrange ──────────────────────────────────────────
+// ── Arrange ──────────────────────────────────────────────
 function renderArrange(){
   const pt=G.arrangePt;
   const cc=arrangedCC();
   const must=mustPos(pt,cc);
   const ctrl=picker(pt);
 
-  // Flow strip
   const flow=[1,2,3,4,5].map(i=>{
     const done=G.arrangements.find(a=>a.pt===i);
-    let cls='fc';
-    let combo='',who='';
+    let cls='fc',combo='',who='';
     if(done){cls+=' '+(done.ctrl==='mine'?'dm':'dt');combo=`<span class="fc-combo">${done.pos[0]}+${done.pos[1]}</span>`;who=done.ctrl==='mine'?'我排':'對方';}
     else if(i===pt){cls+=' cur';who='現在';}
     else{who=picker(i)==='mine'?'我':'對方';}
     return `<div class="${cls}"><span class="fc-pt">${i}</span><span class="fc-who">${who}</span>${combo}</div>`;
   }).join('');
 
-  // Pos tracker
   let posTrack='';
   for(let i=1;i<=7;i++){
     let cls='pt-cell';
@@ -410,38 +386,38 @@ function renderArrange(){
   if(ctrl==='mine'){
     const r=ranked(pt);
     let mustAlert=must?`<div class="alert aw"><strong>第4點：</strong>必須包含順位 ${must}（${esc(G.teamA.players[must-1].name)} vs ${esc(G.teamB.players[must-1].name)}）</div>`:'';
-    const items=r.slice(0,8).map((c,i)=>{
+    const items=r.map((c,i)=>{
       const[p1,p2]=c.pos;
       const ap1=G.teamA.players[p1-1],ap2=G.teamA.players[p2-1];
       const bp1=G.teamB.players[p1-1],bp2=G.teamB.players[p2-1];
       const picked=G.aPicked&&G.aPicked[0]===p1&&G.aPicked[1]===p2;
-      const ac=advCls(c.adv);const sign=c.adv>0?'+':'';
+      const wc=wrColor(c.wr);
       return `<div class="ci${i===0&&!picked?' best':''}${picked?' picked':''}" onclick="pickA(${p1},${p2})">
         <div class="ci-pos">${p1}+${p2}</div>
         <div class="ci-info">
           <div class="ci-names">${esc(ap1.name)} + ${esc(ap2.name)}</div>
-          <div class="ci-vs">對 ${esc(bp1.name)}+${esc(bp2.name)}｜A強${c.aS} vs B強${c.bS}</div>
+          <div class="ci-vs">對 ${esc(bp1.name)}+${esc(bp2.name)}</div>
+          <div class="wr-bar-wrap" style="margin-top:5px"><div class="wr-bar" style="width:${c.wr}%;background:${wrBarColor(c.wr)}"></div></div>
         </div>
-        <div class="ci-adv"><div class="av ${ac}">${sign}${c.adv}</div><div class="al ${ac}">${advLabel(c.adv)}</div></div>
+        <div class="ci-wr">
+          <div class="wr-val ${wc}">${c.wr}%</div>
+          <div class="wr-lbl">${wrLabel(c.wr)}</div>
+        </div>
       </div>`;
     }).join('');
     main=`<div class="card">
-      <div class="card-title">建議排法（由優到劣）</div>
+      <div class="card-title">建議排法（勝率由高到低）</div>
       ${mustAlert}
       <div class="combo-list">${items}</div>
     </div>`;
   } else {
     let mustAlert=must?`<div class="alert aw"><strong>第4點：</strong>對方必須帶順位 ${must}（${esc(G.teamB.players[must-1].name)}）上場</div>`:'';
-    // Auto-select must position for point 4
-    if(must&&!G.bSel.includes(must)) G.bSel=[must];
+    if(must&&!G.bSel.includes(must))G.bSel=[must];
     const btns=Array.from({length:7},(_,idx)=>idx+1).map(pos=>{
-      // pt1-3: only unused positions allowed
-      // pt4: only positions used <2 times allowed (must is locked)
-      // pt5: only positions used <2 times allowed (max 2 rule)
       const usedTwice=cc[pos]>=2;
-      const usedInEarlyRound=pt<=3&&cc[pos]>=1;
-      const isMustLocked=pt===4&&pos===must&&G.bSel.includes(must);
-      const disabled=usedTwice||usedInEarlyRound||isMustLocked;
+      const usedEarly=pt<=3&&cc[pos]>=1;
+      const locked=pt===4&&pos===must&&G.bSel.includes(must);
+      const disabled=usedTwice||usedEarly||locked;
       const isMust=must===pos,isSel=G.bSel.includes(pos);
       return `<button class="pb${isSel?' sel':''}${isMust?' must':''}" ${disabled?'disabled':''} onclick="toggleB(${pos})">
         ${pos}<span class="pb-name">${esc(G.teamB.players[pos-1].name)}</span>
@@ -450,15 +426,16 @@ function renderArrange(){
     let preview='';
     if(G.bSel.length===2){
       const[p1,p2]=[...G.bSel].sort((a,b)=>a-b);
-      const a=adv(p1,p2);const ac=a>0?'ag':a<0?'ar':'ai';const sign=a>0?'+':'';
+      const w=getWR(p1,p2);
+      const wc=wrColor(w);
       const ap1=G.teamA.players[p1-1],ap2=G.teamA.players[p2-1];
       const bp1=G.teamB.players[p1-1],bp2=G.teamB.players[p2-1];
       preview=`<div class="matchup">
-        <div class="ms ms-a"><div class="ms-names">${esc(ap1.name)}<br>${esc(ap2.name)}</div><div class="ms-str">A 強${ap1.s+ap2.s}</div></div>
+        <div class="ms ms-a"><div class="ms-names">${esc(ap1.name)}<br>${esc(ap2.name)}</div></div>
         <div class="vs-mid">VS</div>
-        <div class="ms ms-b"><div class="ms-names">${esc(bp1.name)}<br>${esc(bp2.name)}</div><div class="ms-str">B 強${bp1.s+bp2.s}</div></div>
+        <div class="ms ms-b"><div class="ms-names">${esc(bp1.name)}<br>${esc(bp2.name)}</div></div>
       </div>
-      <div class="alert ${ac}"><strong>${advLabel(a)}</strong>（差值 ${sign}${a}）</div>`;
+      <div class="alert ${w>=70?'ag':w>=50?'ai':'ar'}"><strong>勝率 ${w}%</strong>｜${wrLabel(w)}</div>`;
     }
     main=`<div class="card">
       <div class="card-title">對方選了哪兩個順位？</div>
@@ -473,38 +450,30 @@ function renderArrange(){
     ${main}`;
 }
 
-// ── Play ──────────────────────────────────────────
+// ── Play ─────────────────────────────────────────────────
 function renderPlay(){
   const idx=G.results.length;
   const ar=G.arrangements[idx];
   const[p1,p2]=ar.pos;
   const ap1=G.teamA.players[p1-1],ap2=G.teamA.players[p2-1];
   const bp1=G.teamB.players[p1-1],bp2=G.teamB.players[p2-1];
-  const a=adv(p1,p2);
-  const acl=a>0?'ag':a<0?'ar':'ai';const sign=a>0?'+':'';
+  const w=getWR(p1,p2);
   const sc=score();
-  const dots=[1,2,3,4,5].map(i=>{
-    const r=G.results[i-1];
-    if(!r)return`<div class="dot${i===idx+1?' cur':''}"></div>`;
-    return`<div class="dot ${r.winner==='A'?'w':'l'}"></div>`;
-  }).join('');
+  const dots=[1,2,3,4,5].map(i=>{const r=G.results[i-1];if(!r)return`<div class="dot${i===idx+1?' cur':''}"></div>`;return`<div class="dot ${r.winner==='A'?'w':'l'}"></div>`;}).join('');
 
-  // Point overview cards
   const pcards=G.arrangements.map((ar2,i)=>{
-    const[pp1,pp2]=ar2.pos;
-    const res=G.results[i];
+    const[pp1,pp2]=ar2.pos;const res=G.results[i];
     let cls='pc2';
-    if(res) cls+=' '+(res.winner==='A'?'win-pt':'lose-pt');
-    else if(i===idx) cls+=' cur-pt';
+    if(res)cls+=' '+(res.winner==='A'?'win-pt':'lose-pt');
+    else if(i===idx)cls+=' cur-pt';
+    const w2=getWR(pp1,pp2);
     const resStr=res?(res.winner==='A'?'✓':'✗'):'';
     const resCol=res?(res.winner==='A'?'var(--green)':'var(--red)'):'var(--text3)';
-    const an=`${G.teamA.players[pp1-1].name}+${G.teamA.players[pp2-1].name}`;
-    const bn=`${G.teamB.players[pp1-1].name}+${G.teamB.players[pp2-1].name}`;
     return `<div class="${cls}">
       <div class="pc2-num">${i+1}</div>
       <div class="pc2-info">
-        <div class="pc2-combo">順位 ${pp1}+${pp2}</div>
-        <div class="pc2-players">${an} vs ${bn}</div>
+        <div class="pc2-combo">順位 ${pp1}+${pp2}｜${w2}%</div>
+        <div class="pc2-players">${G.teamA.players[pp1-1].name}+${G.teamA.players[pp2-1].name} vs ${G.teamB.players[pp1-1].name}+${G.teamB.players[pp2-1].name}</div>
       </div>
       <span class="pc2-tag ${ar2.ctrl==='mine'?'mine-tag':'theirs-tag'}">${ar2.ctrl==='mine'?'我排':'對方'}</span>
       <div class="pc2-res" style="color:${resCol}">${resStr}</div>
@@ -519,11 +488,11 @@ function renderPlay(){
   <div class="card">
     <div class="card-title">第 ${idx+1} 點 — 現在比賽（順位 ${p1}+${p2}）</div>
     <div class="matchup">
-      <div class="ms ms-a"><div class="ms-names">${esc(ap1.name)}<br>${esc(ap2.name)}</div><div class="ms-str">A 強${ap1.s+ap2.s}</div></div>
+      <div class="ms ms-a"><div class="ms-names">${esc(ap1.name)}<br>${esc(ap2.name)}</div></div>
       <div class="vs-mid">VS</div>
-      <div class="ms ms-b"><div class="ms-names">${esc(bp1.name)}<br>${esc(bp2.name)}</div><div class="ms-str">B 強${bp1.s+bp2.s}</div></div>
+      <div class="ms ms-b"><div class="ms-names">${esc(bp1.name)}<br>${esc(bp2.name)}</div></div>
     </div>
-    <div class="alert ${acl}"><strong>${advLabel(a)}</strong>（差值 ${sign}${a}）</div>
+    <div class="alert ${w>=70?'ag':w>=50?'ai':'ar'}"><strong>勝率 ${w}%</strong>｜${wrLabel(w)}</div>
     <div class="res-grid">
       <button class="res-btn res-a" onclick="recordResult('A')">🏆<br>${esc(G.teamA.name)} 贏</button>
       <button class="res-btn res-b" onclick="recordResult('B')">💔<br>${esc(G.teamB.name)} 贏</button>
@@ -532,19 +501,21 @@ function renderPlay(){
   <div class="card"><div class="card-title">排點總覽</div><div class="point-cards">${pcards}</div></div>`;
 }
 
-// ── Done ──────────────────────────────────────────
+// ── Done ─────────────────────────────────────────────────
 function renderDone(){
   const sc=score();const isA=sc.a>=3;
   const pcards=G.arrangements.map((ar2,i)=>{
     const[pp1,pp2]=ar2.pos;const res=G.results[i];
     let cls='pc2 '+(res?(res.winner==='A'?'win-pt':'lose-pt'):'');
+    const w2=getWR(pp1,pp2);
     const resStr=res?(res.winner==='A'?'✓':'✗'):'';
     const resCol=res?(res.winner==='A'?'var(--green)':'var(--red)'):'var(--text3)';
-    const an=`${G.teamA.players[pp1-1].name}+${G.teamA.players[pp2-1].name}`;
-    const bn=`${G.teamB.players[pp1-1].name}+${G.teamB.players[pp2-1].name}`;
     return `<div class="${cls}">
       <div class="pc2-num">${i+1}</div>
-      <div class="pc2-info"><div class="pc2-combo">順位 ${pp1}+${pp2}</div><div class="pc2-players">${an} vs ${bn}</div></div>
+      <div class="pc2-info">
+        <div class="pc2-combo">順位 ${pp1}+${pp2}｜${w2}%</div>
+        <div class="pc2-players">${G.teamA.players[pp1-1].name}+${G.teamA.players[pp2-1].name} vs ${G.teamB.players[pp1-1].name}+${G.teamB.players[pp2-1].name}</div>
+      </div>
       <span class="pc2-tag ${ar2.ctrl==='mine'?'mine-tag':'theirs-tag'}">${ar2.ctrl==='mine'?'我排':'對方'}</span>
       <div class="pc2-res" style="color:${resCol}">${resStr}</div>
     </div>`;
@@ -557,7 +528,7 @@ function renderDone(){
   <div class="card"><div class="card-title">比賽記錄</div><div class="point-cards">${pcards}</div></div>`;
 }
 
-// ── Actions ──────────────────────────────────────────
+// ── Actions ──────────────────────────────────────────────
 function startArrange(){G.arrangements=[];G.results=[];G.arrangePt=1;G.aPicked=null;G.bSel=[];G.phase='arrange';render();}
 function pickA(p1,p2){G.aPicked=[p1,p2];render();}
 function confirmA(){
@@ -568,24 +539,17 @@ function confirmA(){
   G.arrangePt=G.arrangements.length+1;render();
 }
 function toggleB(pos){
-  const cc=arrangedCC();
-  const pt=G.arrangePt;
-  const must=mustPos(pt,cc);
-  // Cannot deselect the must position
-  if(must&&pos===must) return;
+  const cc=arrangedCC();const pt=G.arrangePt;const must=mustPos(pt,cc);
+  if(must&&pos===must)return;
   const i=G.bSel.indexOf(pos);
   if(i>=0)G.bSel.splice(i,1);else if(G.bSel.length<2)G.bSel.push(pos);
   render();
 }
 function confirmB(){
   if(G.bSel.length!==2)return;
-  const cc=arrangedCC();
-  const pt=G.arrangePt;
-  const must=mustPos(pt,cc);
-  // Enforce must position for pt4
+  const cc=arrangedCC();const pt=G.arrangePt;const must=mustPos(pt,cc);
   if(must&&!G.bSel.includes(must)){alert(`第4點必須包含順位 ${must}！`);return;}
-  // Enforce max 2 appearances for all points
-  const [s1,s2]=G.bSel;
+  const[s1,s2]=G.bSel;
   if(cc[s1]>=2||cc[s2]>=2){alert('該順位已出場2次，不可再上場！');return;}
   const pos=[...G.bSel].sort((a,b)=>a-b);
   G.arrangements.push({pt:G.arrangePt,pos,ctrl:'theirs'});
