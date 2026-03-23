@@ -252,7 +252,12 @@ let G={
 // ── Logic ──────────────────────────────────────────
 function picker(pt){return (G.coinWin?[1,3,5]:[2,4]).includes(pt)?'mine':'theirs';}
 function arrangedCC(){const c=new Array(8).fill(0);G.arrangements.forEach(a=>{c[a.pos[0]]++;c[a.pos[1]]++;});return c;}
-function mustPos(pt,cc){if(pt!==4)return null;for(let i=1;i<=7;i++)if(cc[i]===0)return i;return null;}
+function mustPos(pt,cc){
+  if(pt!==4)return null;
+  // Both teams share the same position numbers, so one unplayed pos = unplayed for both sides
+  for(let i=1;i<=7;i++)if(cc[i]===0)return i;
+  return null;
+}
 function validCombo(p1,p2,pt,cc){
   if(p1===p2||cc[p1]>=2||cc[p2]>=2)return false;
   if(pt<=3&&(cc[p1]>=1||cc[p2]>=1))return false;
@@ -422,8 +427,11 @@ function renderArrange(){
     </div>`;
   } else {
     let mustAlert=must?`<div class="alert aw"><strong>第4點：</strong>對方必須帶順位 ${must}（${esc(G.teamB.players[must-1].name)}）上場</div>`:'';
+    // Auto-select must position for point 4
+    if(must&&!G.bSel.includes(must)) G.bSel=[must];
     const btns=Array.from({length:7},(_,idx)=>idx+1).map(pos=>{
-      const disabled=cc[pos]>=2||(pt<=3&&cc[pos]>=1);
+      // Disable: already used 2x, or used once in pts 1-3, or is the must pos (locked in)
+      const disabled=cc[pos]>=2||(pt<=3&&cc[pos]>=1)||(pt===4&&pos===must&&G.bSel.includes(must));
       const isMust=must===pos,isSel=G.bSel.includes(pos);
       return `<button class="pb${isSel?' sel':''}${isMust?' must':''}" ${disabled?'disabled':''} onclick="toggleB(${pos})">
         ${pos}<span class="pb-name">${esc(G.teamB.players[pos-1].name)}</span>
@@ -550,12 +558,22 @@ function confirmA(){
   G.arrangePt=G.arrangements.length+1;render();
 }
 function toggleB(pos){
+  const cc=arrangedCC();
+  const pt=G.arrangePt;
+  const must=mustPos(pt,cc);
+  // Cannot deselect the must position
+  if(must&&pos===must) return;
   const i=G.bSel.indexOf(pos);
   if(i>=0)G.bSel.splice(i,1);else if(G.bSel.length<2)G.bSel.push(pos);
   render();
 }
 function confirmB(){
   if(G.bSel.length!==2)return;
+  const cc=arrangedCC();
+  const pt=G.arrangePt;
+  const must=mustPos(pt,cc);
+  // Enforce must position
+  if(must&&!G.bSel.includes(must)){alert(`第4點必須包含順位 ${must}！`);return;}
   const pos=[...G.bSel].sort((a,b)=>a-b);
   G.arrangements.push({pt:G.arrangePt,pos,ctrl:'theirs'});
   G.bSel=[];
